@@ -4,19 +4,31 @@ document.getElementById("aceptar").addEventListener("click", vaciarLista);
 document.getElementById("rechazar").addEventListener("click", rechazo);
 document.getElementById("filtro1").addEventListener("click", filtro1);
 document.getElementById("mostrarTodo").addEventListener("click", mostrarTareas);
-export class Task {
-    constructor(name, description, status, priority) {
-        this.name = name;
-        this.description = description;
-        this.status = status;
-        this.priority = priority;
+class Task {
+    constructor(name, status, priority, description) {
+        this._name = name;
+        this._status = status;
+        this._priority = priority;
+        this._description = description;
+    }
+    get name() {
+        return this._name;
+    }
+    get priority() {
+        return this._priority;
+    }
+    get status() {
+        return this._status;
+    }
+    set name(name) {
+        this._name = name;
     }
 }
 const tasks = [
-    new Task("TODO Task 1", "Example task", "todo", 0),
-    new Task("TODO Task 2", "Example task", "todo", 0),
-    new Task("TODO Task 3", "Example task", "todo", 0),
-    new Task("TODO Task 4", "Example task 2", "done", 1)
+    new Task("TODO Task 1", "todo", "0", "Example task"),
+    new Task("TODO Task 2", "todo", "0", "Example task"),
+    new Task("TODO Task 3", "todo", "0", "Example task"),
+    new Task("TODO Task 4", "done", "1", "Example task")
 ];
 for (let i = 0; i < tasks.length; i++) {
     const nombre = tasks[i].name;

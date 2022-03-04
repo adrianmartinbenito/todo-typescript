@@ -1,3 +1,4 @@
+
 document.getElementById("crearTarea").addEventListener("click", nuevaTarea);
 document.getElementById("vaciar").addEventListener("click", estasSeguro);
 document.getElementById("aceptar").addEventListener("click", vaciarLista);
@@ -5,26 +6,38 @@ document.getElementById("rechazar").addEventListener("click", rechazo);
 document.getElementById("filtro1").addEventListener("click", filtro1);
 document.getElementById("mostrarTodo").addEventListener("click", mostrarTareas);
 
-export class Task{
-    
-    name;
-    description;
-    status;
-    priority;
+class Task{
 
-    constructor(name, description, status, priority) {
-        this.name= name;
-        this.description= description;
-        this.status= status;
-        this.priority= priority;
+    private _name: string;
+    private _description ?: string;
+    private _status: string;
+    private _priority: string;
+
+    constructor(name: string, status: string, priority: string, description ?: string) {
+        this._name= name; 
+        this._status= status; 
+        this._priority= priority;
+        this._description= description;
+    }
+    get name(): string{
+        return this._name;
+    }
+    get priority(): string{
+        return this._priority;
+    }
+    get status(): string{
+        return this._status;
+    }
+    set name(name: string){
+        this._name= name;
     }
 }
 
 const tasks:Task[] = [
-    new Task("TODO Task 1", "Example task", "todo", 0),
-    new Task("TODO Task 2", "Example task", "todo", 0),
-    new Task("TODO Task 3", "Example task", "todo", 0),
-    new Task("TODO Task 4", "Example task 2", "done", 1)
+    new Task("TODO Task 1", "todo", "0" , "Example task"),
+    new Task("TODO Task 2","todo", "0", "Example task"),
+    new Task("TODO Task 3", "todo", "0", "Example task"),
+    new Task("TODO Task 4", "done", "1", "Example task")
 ];
 
 for(let i = 0; i < tasks.length; i++) {
@@ -46,8 +59,8 @@ for(let i = 0; i < tasks.length; i++) {
         lista = document.getElementById("listDone");
     }
     
-    template.getElementsByClassName("uno")[0].innerHTML = nombre;
-    template.getElementsByClassName("dos")[0].innerHTML = prioridad;
+    (template.getElementsByClassName("uno")[0] as HTMLElement).innerHTML = nombre;
+    (template.getElementsByClassName("dos")[0] as HTMLElement).innerHTML = prioridad;
 
     lista.appendChild(template);
 }
