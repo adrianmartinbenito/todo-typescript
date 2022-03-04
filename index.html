@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Scrum</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="vertical">
+            <div class="crear">
+                <div>
+                    <h2>Nombre de la tarea</h2>
+                    <textarea id="nombre"></textarea>
+                </div>
+                <div>
+                    <h2>Descripción</h2>
+                    <textarea id="descripcion"></textarea>
+                </div>
+                <div>
+                    <h2>Prioridad</h2>
+                    <select id="prioridad">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                </div>
+                <div>
+                    <h2>Estado</h2>
+                    <select id="estado">
+                        <option value="1">To do</option>
+                        <option value="2">Doing</option>
+                        <option value="3">Done</option>
+                    </select>
+                </div>
+                <button id="crearTarea">Añadir tarea</button>
+            </div>
+            <div class="horizontal">
+                <div>
+                    <h1>To do</h1>
+                    <button id="filtro1">A</button>
+                    <div class="bloque" id="listToDo">
+                    </div>
+                </div>
+                <div>
+                    <h1>Doing</h1>
+                    <button id="filtro1">A</button>
+                    <div class="bloque" id="listDoing">  
+                    </div>
+                </div>
+                <div>
+                    <h1>Done</h1>
+                    <button id="filtro1">A</button>
+                    <div class="bloque" id="listDone">  
+                    </div>
+                </div>
+                <div>
+                    <h1>Deleted</h1>
+                    <button id="filtro1">A</button>
+                    <div class="bloque" id="listDeleted">  
+                    </div>
+                </div>
+            </div>
+            <div id="contenedorVaciar">
+                <button id="mostrarTodo">Mostrar tareas</button>
+                <h2>Vaciar lista:</h2>
+                <select id="comboBorrar">
+                    <option value="1">To do</option>
+                    <option value="2">Doing</option>
+                    <option value="3">Done</option>
+                    <option value="4">Todas</option>
+                </select>
+                <button  id="vaciar">Vaciar</button>
+                <h2 class="oculto">Estas seguro?</h2>
+                <button class="oculto" id="aceptar">Sí</button>
+                <button class="oculto" id="rechazar">No</button>
+                
+            </div>
+            
+        </div>
+        <div style="display: none;">
+            <div id="clonar" class="tarea">
+                <h2 class="uno"></h2>
+                <h2 class="dos"></h2>
+                <button id="upgrade">upgrade</button>
+                <button id="eliminar">eliminar</button>
+            </div>
+            
+        </div>
+        <script src="task.js"></script>
+        <script src="javascript.js"></script>
+    </body>
+</html>

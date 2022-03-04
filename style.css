@@ -1,0 +1,67 @@
+body{
+    background-color: rgb(86, 183, 240);
+}
+.horizontal{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    text-align: center;
+}
+.bloque{
+    border-radius:15px;
+    background-color:rgb(204, 204, 204) ;
+    height:500px;
+    width: 200px;
+    overflow: auto;
+   
+
+}
+.vertical{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+}
+.crear{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-around;
+    border-radius:15px;
+    background-color:rgb(204, 204, 204) ;
+
+}
+h2{
+    font-size: medium;
+}
+.tarea{
+    border-radius: 15px;
+    background-color: rgb(171, 226, 247);
+}
+.oculto{
+
+    position:relative;
+    bottom:40px;
+    visibility: hidden;
+}
+
+textarea{
+    border-radius: 15px;
+}
+button{
+    border-radius: 15px;
+}
+select{
+    border-radius: 15px;
+}
+#mostrarTodo{
+    margin-top: 10px;
+    visibility: hidden;
+}
+#upgrade{
+    visibility: hidden;
+}
+#eliminar{
+    visibility: hidden;
+}
+#filtro1{
+    visibility: hidden;
+}
